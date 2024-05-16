@@ -18,9 +18,9 @@ Conceptos que entran en la 1er Preentrega
 
 - Ciclos e iteraciones usando:
 
-For
-While
-do While
+    For
+    While
+    do While
 
 
 - Funciones
