@@ -26,6 +26,9 @@ do While
 - Funciones
 
 Funciones sin parámetros
+
 Funciones con parámetros
+
 Funciones anónimas
+
 Funciones flecha
