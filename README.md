@@ -1,25 +1,25 @@
 Conceptos que entran en la 1er Preentrega
 
-- Variables x
+- Variables
 
-- Constantes x
+- Constantes
 
-- Booleanos x
+- Booleanos
 
-- Prompt x
+- Prompt
 
-- Alert x
+- Alert
 
-- Console.log x
+- Console.log
 
-- Control de flujo con if y if else. x
+- Control de flujo con if y if else.
 
-- Operadores logicos x
+- Operadores logicos
 
 - Ciclos e iteraciones usando:
 
-    For x
-    While x
+    For
+    While
     do While
 
 
