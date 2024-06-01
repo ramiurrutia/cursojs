@@ -1,36 +1,11 @@
-## Ramiro Urrutia, Preentrega 1.
+## Ramiro Urrutia, Preentrega 2.
 
-Conceptos que entran en la 1er Preentrega
+- Objetos x
 
-- Variables
+- Arrays x
 
-- Constantes
+- Metodos
 
-- Booleanos
+- Funciones de orden superior
 
-- Prompt
-
-- Alert
-
-- Console.log
-
-- Control de flujo con if y if else.
-
-- Operadores logicos
-
-- Ciclos e iteraciones usando:
-
-    For
-    While
-    do While
-
-
-- Funciones
-
-Funciones sin parámetros
-
-Funciones con parámetros
-
-Funciones anónimas
-
-Funciones flecha
+- DOM x
