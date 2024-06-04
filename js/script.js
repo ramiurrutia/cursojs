@@ -26,31 +26,47 @@ console.log("Edad del usuario: " + edad);
 
 saludar();
 
-
-
-class Productos {
-    constructor(producto, precio, stock){
-        this.producto = producto.toUpperCase();
+class Producto {
+    constructor(nombre, categoria, precio){
+        this.nombre = nombre.toUpperCase();
         this.precio = parseFloat(precio);
-        this.stock = parseFloat(stock);
-    };
+        this.categoria = categoria;
+    }
+
+    aplicarDescuento(descuento){
+        if (descuento < 0 || descuento > 100) {
+            console.warn(`Descuento incorrecto de ${this.nombre}, debe ser entre 0% y 100%`);
+            return;
+        } else {
+            this.precio -= this.precio * (descuento / 100);
+            this.precio = this.precio.toFixed(2);
+            return this.precio;
+        }
+    }
 };
 
-alert("Calcular IVA de un producto:")
-const producto = prompt("Ingresar nombre de producto:")
-const precio = prompt("Ingresar precio:")
-const stock = prompt("Ingrese el stock del producto:")
+function mostrarProducto(nombreProducto){
+    let crearDiv = document.createElement("div")
 
-const nuevoProducto = new Productos(producto, precio, stock);
+    crearDiv.innerHTML = `<h3>${nombreProducto.nombre} | USD$${nombreProducto.precio}</h3>
+    <h4>Categoria: ${nombreProducto.categoria}</h4>`
 
-const precioIva = nuevoProducto.precio * 1.21
+    document.body.appendChild(crearDiv);
+};
 
-let infoProducto = document.createElement("div");
+const producto1 = new Producto("RTX 3090", "Tarjeta Gráfica", 499.99);
+const producto2 = new Producto("Ryzen 7 3600G", "Procesador", 149.99);
+const producto3 = new Producto("HyperX 8GB 3200Mhz", "RAM", 49.99);
+const producto4 = new Producto("Cooler MF120", "Cooler", 19.99);
+const producto5 = new Producto("RTX 4090", "Tarjeta Gráfica", 699.99);
 
-infoProducto.innerHTML = `<h3>Información del producto:</h3>
-<h4>Nombre del producto: ${nuevoProducto.producto}</h4>
-<h4>Precio del producto: $${nuevoProducto.precio}</h4>
-<h4>Precio del producto con IVA: $${precioIva}</h4>
-<h4>Stock: ${nuevoProducto.stock}</h4>`
+producto1.aplicarDescuento(10);
 
-document.body.appendChild(infoProducto)
+const productos = [producto1, producto2, producto3, producto4, producto5];
+
+productos.forEach(array => {
+    mostrarProducto(array);
+});
+
+const productosBaratos = productos.filter(producto => producto.precio < 100);
+console.log(productosBaratos);

@@ -1,11 +1,11 @@
 ## Ramiro Urrutia, Preentrega 2.
 
-- Objetos x
+- Objetos
 
-- Arrays x
+- Arrays
 
 - Metodos
 
 - Funciones de orden superior
 
-- DOM x
+- DOM
