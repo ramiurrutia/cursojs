@@ -1,39 +1,27 @@
-function saludar() {
-  document.querySelector(
-    "h1"
-  ).innerHTML = `Bienvenido/a <b>${nombre.toUpperCase()}</b>!`;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  nombre = localStorage.getItem("nombre");
+  edad = localStorage.getItem("edad");
+  pais = localStorage.getItem("pais");
 
-function pedirNombre(input) {
-  let nombre = input;
-  while (nombre.length <= 2 || !isNaN(nombre)) {
-    if (nombre.length <= 2) {
-      alert("El nombre ingresado tiene menos de 2 caracteres!");
-    } else {
-      alert("El nombre ingresado es incorrecto");
-    }
-    nombre = prompt("Ingrese un nombre nuevamente:");
+  function ingresarDatos() {
+    const intro = document.querySelector(".intro");
+    const h2 = document.createElement("h2");
+    intro.appendChild(h2);
+    h2.className = 'crear-cuenta'
+    h2.innerHTML = `Personaliza tu cuenta haciendo click <a href="cuenta.html">aquí</a>`
   }
-  localStorage.setItem("nombre", nombre);
-}
 
-let nombre = localStorage.getItem("nombre");
+  function saludar() {
+    document.querySelector(
+      "#h1nombre"
+    ).innerHTML = `Bienvenido/a <b>${nombre.toUpperCase()}</b>!`;
+  }
 
-if (!(nombre == "")) {
-  console.log(nombre);
-} else {
-  pedirNombre(prompt("Ingrese su nombre"));
-}
+  if (!(nombre == null)) {
+    saludar();
+  } else {
+    ingresarDatos();
+  }
+});
 
-console.log("Contador de caracteres de " + nombre);
-for (let i = 1; i <= nombre.length; i++) {
-  console.log(i);
-}
-
-let edad = parseInt(prompt("Ingrese su edad:"));
-while (isNaN(edad) || edad <= 0) {
-  edad = parseInt(prompt("Ingrese una edad correcta:"));
-}
-console.log("Edad del usuario: " + edad);
-
-saludar();
+// 
