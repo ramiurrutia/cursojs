@@ -49,9 +49,18 @@ function mostrarProductos(productos) {
 }
 
 function aniadirAlCarrito(producto) {
-    const index = carrito.findIndex(item => item.nombre === producto.nombre);
-    if (index !== -1) {
-        carrito[index].cantidad += 1;
+    const productoExistente = carrito.find(p => p.nombre === producto.nombre);
+    Toastify({
+        text: "Producto añadido al carrito!",
+        className: "toastify-producto",
+        close: true,
+        duration: 2000,
+        style: {
+          background: "linear-gradient(to right, #44fd91, #8ff368);",
+        }
+      }).showToast();
+    if (productoExistente) {
+        productoExistente.cantidad += 1;
     } else {
         producto.cantidad = 1;
         carrito.push(producto);
